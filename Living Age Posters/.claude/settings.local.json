@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd \"/mnt/c/Users/SajcS/Desktop/Living works by the word/Living Age Posters/takeout-3-001\" && mkdir -p \"Spiral-and-Green-Flame\" \"Living-Systems-vs-Machine\" \"True-Republic-and-Freedom\" \"Sagent-and-Clokey\" \"Vecna-and-Truth\" \"Pledge-Turn-Prestige\" \"Star-Wars-and-Mythology\" \"Scripture-and-Faith\" \"Veterans-and-Conscience\" \"Pink-Cow\")"
+    ]
+  }
+}

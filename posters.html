@@ -123,18 +123,19 @@
       .poster-grid { columns: 130px; }
     }
   </style>
+  <link rel="stylesheet" href="site.css">
 </head>
 <body>
 
-<nav>
-  <div class="nav-logo">Living Architecture</div>
+<nav id="site-nav">
+  <a class="nav-logo" href="living-age.html">Living Works by the Word</a>
   <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
+    <li><a href="living-age.html">The Living Age</a></li>
+    <li><a href="index.html">Architecture</a></li>
+    <li><a href="spiral-steward.html">Spiral Steward</a></li>
     <li><a href="moral-framework.html">Moral Framework</a></li>
-    <li><a href="spiral-steward.html">The Spiral Steward</a></li>
     <li><a href="sagent.html">The Sagent</a></li>
     <li><a href="true-republic.html">True Republic</a></li>
-    <li><a href="living-age.html">The Living Age</a></li>
     <li><a href="posters.html" class="active">Posters</a></li>
   </ul>
 </nav>
@@ -679,6 +680,21 @@ document.getElementById('lightbox').addEventListener('click', function(e) {
 });
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
 </script>
+
+
+<!-- FOOTER -->
+<footer id="site-footer">
+  <span class="footer-brand">Living Works by the Word &middot; Sage Clokey &middot; 2026</span>
+  <nav class="footer-links">
+    <a href="living-age.html">The Living Age</a>
+    <a href="index.html">Architecture</a>
+    <a href="spiral-steward.html">Spiral Steward</a>
+    <a href="moral-framework.html">Moral Framework</a>
+    <a href="sagent.html">The Sagent</a>
+    <a href="true-republic.html">True Republic</a>
+    <a href="posters.html">Posters</a>
+  </nav>
+</footer>
 
 </body>
 </html>

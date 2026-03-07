@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(which pandoc wkhtmltopdf weasyprint 2>/dev/null; python3 -c \"import reportlab; print\\('reportlab ok'\\)\" 2>/dev/null; python3 -c \"import weasyprint; print\\('weasyprint ok'\\)\" 2>/dev/null)",
+      "Bash(cd \"/mnt/c/Users/SajcS/Desktop/Living works by the word/business plan pitch prompts\" && python3 generate_pdfs.py)",
+      "Bash(python3 -c \"import pptx; print\\('pptx ok', pptx.__version__\\)\")",
+      "Bash(pip install python-pptx -q && python3 -c \"import pptx; print\\('pptx ok', pptx.__version__\\)\")",
+      "Bash(pip install python-pptx --break-system-packages -q && python3 -c \"import pptx; print\\('pptx ok', pptx.__version__\\)\")",
+      "Bash(cd \"/mnt/c/Users/SajcS/Desktop/Living works by the word/business plan pitch prompts\" && python3 generate_pptx.py 2>&1)"
+    ]
+  }
+}

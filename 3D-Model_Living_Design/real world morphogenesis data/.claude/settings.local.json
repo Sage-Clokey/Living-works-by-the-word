@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:zenodo.org)",
+      "WebFetch(domain:plantvision.unl.edu)",
+      "WebFetch(domain:springernature.figshare.com)",
+      "WebFetch(domain:www.ncbi.nlm.nih.gov)",
+      "WebFetch(domain:www.ipb.uni-bonn.de)",
+      "WebFetch(domain:baskargroup.github.io)",
+      "Bash(cd \"/mnt/c/Users/SajcS/Desktop/Living works by the word/3D-Model_Living_Design/real world morphogenesis data\" && pip install requests tqdm huggingface_hub -q 2>&1 | tail -5)",
+      "Bash(pip install requests tqdm huggingface_hub -q --break-system-packages 2>&1 | tail -5)",
+      "Bash(cd \"/mnt/c/Users/SajcS/Desktop/Living works by the word/3D-Model_Living_Design/real world morphogenesis data\" && python download_datasets.py 2>&1)",
+      "Bash(cd \"/mnt/c/Users/SajcS/Desktop/Living works by the word/3D-Model_Living_Design/real world morphogenesis data\" && python3 download_datasets.py 2>&1)",
+      "Bash(cd \"/mnt/c/Users/SajcS/Desktop/Living works by the word/3D-Model_Living_Design/real world morphogenesis data\" && python3 pipeline/run.py 2>&1)"
+    ]
+  }
+}

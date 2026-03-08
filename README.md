@@ -1,5 +1,7 @@
 # Living Works by the Word
 
+**[View the Live Site](https://sage-clokey.github.io/Living-works-by-the-word/)**
+
 A generative architecture and living systems design project combining morphogenetic simulation, philosophy, scripture, and business strategy — built around the idea that organisms, not machines, are the proper model for design.
 
 ## Website
@@ -19,7 +21,11 @@ A generative architecture and living systems design project combining morphogene
 - `story.html` — Scrollytelling Narrative
 - `deck.html` — Interactive Pitch Deck
 
-Live site: [sage-clokey.github.io/Living-works-by-the-word](https://sage-clokey.github.io/Living-works-by-the-word)
+Live site: [sage-clokey.github.io/Living-works-by-the-word](https://sage-clokey.github.io/Living-works-by-the-word/)
+
+---
+
+### [View the Live Site](https://sage-clokey.github.io/Living-works-by-the-word/)
 
 ## Business Plan
 

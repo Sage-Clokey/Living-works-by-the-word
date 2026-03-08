@@ -47,7 +47,11 @@
       "Bash(cd \"/mnt/c/Users/SajcS/Desktop/Living works by the word\" && mkdir -p website ai-tools business business/strategy media/graphics media/videos posters)",
       "Bash(cd \"/mnt/c/Users/SajcS/Desktop/Living works by the word\" && for f in \"01_Business_Plan_Living_Age_Initiative.pdf\" \"02_Competitive_Analysis.pdf\" \"03_Living_Works_Spiral_Steward.pdf\" \"04_Pitch_Deck.pdf\" \"05_Presentation_Overview.pdf\" \"integrate_idea.txt\" \"livingWorks_SpiralSteward.txt\" \"generate_pdfs.py\" \"generate_pptx.py\" \"slide_Deck.txt\"; do git mv \"business plan pitch prompts/$f\" \"business/pitch-deck/$f\" && echo \"moved $f\"; done)",
       "Bash(cd \"/mnt/c/Users/SajcS/Desktop/Living works by the word/website\" && sed -i \\\\\n  -e 's|living_architecture_images/|../media/graphics/architecture/|g' \\\\\n  -e 's|images of living age/|../media/graphics/living-age/|g' \\\\\n  -e 's|images for website/|../media/graphics/website/|g' \\\\\n  -e 's|images%20for%20website/|../media/graphics/website/|g' \\\\\n  -e 's|morphogenetic-designer/outputs/|../ai-tools/morphogenesis-engine/outputs/|g' \\\\\n  *.html && echo \"Done\")",
-      "Bash(git -C \"/mnt/c/Users/SajcS/Desktop/Living works by the word\" remote -v)"
+      "Bash(git -C \"/mnt/c/Users/SajcS/Desktop/Living works by the word\" remote -v)",
+      "Bash(cd \"/mnt/c/Users/SajcS/Desktop/Living works by the word\" && gh api repos/Sage-Clokey/Living-works-by-the-word/pages 2>&1)",
+      "Bash(cd \"/mnt/c/Users/SajcS/Desktop/Living works by the word\" && grep -h \"src=\\\\|href=.*\\\\.\\\\\\(png\\\\|jpg\\\\|jpeg\\\\|gif\\\\|svg\\\\|webp\\\\\\)\" *.html | grep -v \"^--\")",
+      "Bash(cd \"/mnt/c/Users/SajcS/Desktop/Living works by the word\" && sed -i 's|\"\\\\.\\\\./media/|\"media/|g; s|\"\\\\.\\\\./ai-tools/|\"ai-tools/|g' *.html)",
+      "Bash(cd \"/mnt/c/Users/SajcS/Desktop/Living works by the word\" && grep -h \"\\\\.\\\\.\" *.html | grep \"src=\" | head -20)"
     ]
   }
 }

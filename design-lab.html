@@ -697,9 +697,9 @@
     <div class="eyebrow">System architecture</div>
     <h2>The full pipeline</h2>
     <p>
-      This browser demo runs the engine client-side.
-      The production version connects to a Python morphogenesis backend
-      via FastAPI for heavier simulations and GRN-driven growth.
+      The generator calls a live Python morphogenesis backend via FastAPI,
+      falling back to the client-side engine if the API is offline.
+      GRN-driven growth is next.
     </p>
 
     <div class="pipeline-flow">
@@ -1007,19 +1007,72 @@ promptInput.addEventListener('keydown', e => {
   if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) triggerGenerate();
 });
 
+// ── Python API (Render.com) ───────────────────────────────────────────────────
+// After deploying to Render, replace this URL with your live service URL.
+const API_URL = 'https://living-works-api.onrender.com';
+
+async function tryApiGenerate(prompt) {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 9000);
+  try {
+    const res = await fetch(`${API_URL}/generate`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ prompt }),
+      signal: controller.signal,
+    });
+    clearTimeout(timeout);
+    if (!res.ok) throw new Error(`API ${res.status}`);
+    return await res.json();
+  } catch (e) {
+    clearTimeout(timeout);
+    throw e;
+  }
+}
+
+// Convert API segment format {x1,y1,z1,x2,y2,z2,radius,parent_id}
+// into the local format {sx,sy,sz,ex,ey,ez,radius,depth}
+function apiSegsToLocal(apiSegs) {
+  const depths = new Array(apiSegs.length).fill(0);
+  for (let i = 0; i < apiSegs.length; i++) {
+    const pid = apiSegs[i].parent_id;
+    if (pid >= 0 && pid < i) depths[i] = depths[pid] + 1;
+  }
+  return apiSegs.map((s, i) => ({
+    sx: s.x1, sy: s.y1, sz: s.z1,
+    ex: s.x2, ey: s.y2, ez: s.z2,
+    radius: s.radius,
+    depth:  depths[i],
+  }));
+}
+
 function triggerGenerate() {
   const prompt = promptInput.value.trim() || 'grow a tree';
   genBtn.disabled = true;
   statusLine.className = 'status-line active';
-  statusLine.textContent = 'generating...';
+  statusLine.textContent = 'connecting to morphogenesis engine...';
 
-  setTimeout(() => {
-    const params = promptToParams(prompt);
-    showParams(params);
-    const segs = runEngine(params);
-    displaySegments(segs, params);
+  tryApiGenerate(prompt).then(data => {
+    const segs       = apiSegsToLocal(data.segments);
+    const maxDepth   = Math.max(...segs.map(s => s.depth), 1);
+    const localParams = promptToParams(prompt);
+    showParams(Object.assign(localParams, { mode: data.mode }));
+    displaySegments(segs, { mode: data.mode, max_depth: maxDepth });
+    statusLine.className = 'status-line';
+    statusLine.innerHTML =
+      `api · ${data.segment_count} segments · mode: ${data.mode}`;
     genBtn.disabled = false;
-  }, 30);
+  }).catch(() => {
+    // API offline or timed out — fall back to client-side JS engine
+    statusLine.textContent = 'api offline · running local engine...';
+    setTimeout(() => {
+      const params = promptToParams(prompt);
+      showParams(params);
+      const segs = runEngine(params);
+      displaySegments(segs, params);
+      genBtn.disabled = false;
+    }, 30);
+  });
 }
 
 // ── Morphogenesis presets ─────────────────────────────────────────────────────

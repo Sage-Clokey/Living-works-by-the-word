@@ -619,6 +619,9 @@
           <button class="ex-btn">spiral cathedral, tall</button>
           <button class="ex-btn">living bridge</button>
           <button class="ex-btn">wide spreading coral</button>
+          <button class="ex-btn">shelter, dense</button>
+          <button class="ex-btn">living canopy, dense</button>
+          <button class="ex-btn">dome pavilion, dense</button>
         </div>
       </div>
 
@@ -1136,12 +1139,38 @@ function spiralPreset() {
   };
 }
 
+// ── Shelter / canopy preset ───────────────────────────────────────────────────
+function shelterPreset() {
+  return {
+    mode:                   'coral',
+    steps:                  420,
+    step_size:              0.15,
+    branching_probability:  0.22,
+    max_tips:               300,
+    max_depth:              12,
+    upward_bias:            0.08,
+    radial_bias:            1.4,
+    twist_strength:         0.0,
+    noise_strength:         0.18,
+    branch_angle_deg:       42,
+    split_probability:      0.80,
+    taper:                  0.991,
+    min_radius:             0.008,
+    initial_radius:         0.075,
+  };
+}
+
 // ── Prompt → params ───────────────────────────────────────────────────────────
 function promptToParams(prompt) {
   const p = prompt.toLowerCase();
 
   let params;
-  if (p.includes('coral') || p.includes('reef')) {
+  if (
+    p.includes('shelter') || p.includes('canopy') ||
+    p.includes('dome') || p.includes('pavilion') || p.includes('vault')
+  ) {
+    params = shelterPreset();
+  } else if (p.includes('coral') || p.includes('reef')) {
     params = coralPreset();
   } else if (
     p.includes('spiral') || p.includes('helix') ||

@@ -15,16 +15,18 @@ Examples:
 from __future__ import annotations
 
 import copy
-from presets import GrowthParams, tree, coral, spiral
+from presets import GrowthParams, tree, coral, spiral, shelter
 
 
 # ── Keyword tables ────────────────────────────────────────────────────────────
 
 _MODE_KEYWORDS = {
+    "shelter":  ["shelter", "canopy", "dome", "pavilion", "vault",
+                 "living roof", "living shelter", "living canopy"],
     "coral":    ["coral", "reef", "algae", "polyp"],
     "spiral":   ["spiral", "helix", "helical", "tower", "cathedral",
                  "bridge", "living bridge", "spire", "column"],
-    "tree":     ["tree", "forest", "oak", "pine", "branch", "canopy",
+    "tree":     ["tree", "forest", "oak", "pine", "branch",
                  "trunk", "bough", "sapling"],
 }
 
@@ -78,7 +80,9 @@ def translate(prompt: str) -> GrowthParams:
 
     # ── Mode selection ────────────────────────────────────────────────────────
     params: GrowthParams
-    if any(kw in p for kw in _MODE_KEYWORDS["coral"]):
+    if any(kw in p for kw in _MODE_KEYWORDS["shelter"]):
+        params = shelter()
+    elif any(kw in p for kw in _MODE_KEYWORDS["coral"]):
         params = coral()
     elif any(kw in p for kw in _MODE_KEYWORDS["spiral"]):
         params = spiral()
@@ -101,10 +105,10 @@ def translate(prompt: str) -> GrowthParams:
 
     # ── Clamp safety bounds ───────────────────────────────────────────────────
     params.branching_probability = float(
-        min(0.40, max(0.01, params.branching_probability))
+        min(0.60, max(0.01, params.branching_probability))
     )
-    params.max_tips    = int(min(250, max(8, params.max_tips)))
-    params.steps       = int(min(600, max(50, params.steps)))
+    params.max_tips    = int(min(500, max(8, params.max_tips)))
+    params.steps       = int(min(800, max(50, params.steps)))
     params.upward_bias = float(min(2.0, max(0.0, params.upward_bias)))
     params.radial_bias = float(min(1.5, max(0.0, params.radial_bias)))
     params.noise_strength = float(min(0.7, max(0.02, params.noise_strength)))

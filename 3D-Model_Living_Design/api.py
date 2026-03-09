@@ -80,7 +80,7 @@ def root() -> dict:
 
 @app.get("/presets", summary="List preset names")
 def list_presets() -> dict:
-    return {"presets": ["tree", "coral", "spiral"]}
+    return {"presets": ["tree", "coral", "spiral", "shelter"]}
 
 
 @app.post("/generate", response_model=GenerateResponse, summary="Prompt → segments")
@@ -128,9 +128,9 @@ def generate(req: GenerateRequest) -> GenerateResponse:
     summary        = "Run a named preset",
 )
 def run_preset(name: str, seed: int = 42) -> GenerateResponse:
-    from presets import tree, coral, spiral
+    from presets import tree, coral, spiral, shelter
 
-    presets = {"tree": tree, "coral": coral, "spiral": spiral}
+    presets = {"tree": tree, "coral": coral, "spiral": spiral, "shelter": shelter}
     if name not in presets:
         raise HTTPException(
             status_code=404,

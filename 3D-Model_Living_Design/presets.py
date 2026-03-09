@@ -106,6 +106,30 @@ def coral() -> GrowthParams:
     )
 
 
+def shelter() -> GrowthParams:
+    """Wide radial canopy — minimal upward bias, dense outward spread, shelter/dome shape."""
+    return GrowthParams(
+        mode                  = "coral",
+        steps                 = 420,
+        step_size             = 0.15,
+        branching_probability = 0.22,
+        max_tips              = 300,
+        max_depth             = 12,
+        upward_bias           = 0.08,
+        radial_bias           = 1.40,
+        twist_strength        = 0.00,
+        noise_strength        = 0.18,
+        branch_angle_deg      = 42.0,
+        split_probability     = 0.80,
+        taper                 = 0.991,
+        min_radius            = 0.008,
+        initial_radius        = 0.075,
+        collision_avoidance   = True,
+        collision_distance    = 0.08,
+        seed                  = 42,
+    )
+
+
 def spiral() -> GrowthParams:
     """Helical upward growth with tangential twist, architectural feel."""
     return GrowthParams(

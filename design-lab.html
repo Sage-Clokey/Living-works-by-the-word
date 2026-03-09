@@ -640,6 +640,7 @@
         <div class="viewer-btns">
           <button class="viewer-btn active" id="auto-rotate-btn">auto-rotate</button>
           <button class="viewer-btn" id="reset-cam-btn">reset view</button>
+          <button class="viewer-btn" id="export-btn">export .obj</button>
         </div>
       </div>
     </div>
@@ -1354,6 +1355,38 @@ function runEngine(params) {
   return segments;
 }
 
+// ── Export current segments as OBJ ───────────────────────────────────────────
+let currentSegments = [];
+let currentMode     = 'structure';
+
+const exportBtn = document.getElementById('export-btn');
+exportBtn.addEventListener('click', () => {
+  if (currentSegments.length === 0) return;
+
+  const lines = [
+    '# Living Works by the Word — Morphogenesis Export',
+    `# Mode: ${currentMode}  Segments: ${currentSegments.length}`,
+    '',
+  ];
+  let vi = 1;
+  for (const s of currentSegments) {
+    const sx = s.sx ?? s.x1, sy = s.sy ?? s.y1, sz = s.sz ?? s.z1;
+    const ex = s.ex ?? s.x2, ey = s.ey ?? s.y2, ez = s.ez ?? s.z2;
+    lines.push(`v ${sx.toFixed(5)} ${sy.toFixed(5)} ${sz.toFixed(5)}`);
+    lines.push(`v ${ex.toFixed(5)} ${ey.toFixed(5)} ${ez.toFixed(5)}`);
+    lines.push(`l ${vi} ${vi + 1}`);
+    vi += 2;
+  }
+
+  const blob = new Blob([lines.join('\n')], { type: 'text/plain' });
+  const url  = URL.createObjectURL(blob);
+  const a    = document.createElement('a');
+  a.href     = url;
+  a.download = `living_${currentMode}.obj`;
+  a.click();
+  URL.revokeObjectURL(url);
+});
+
 // ── Display segments with animated reveal ────────────────────────────────────
 let currentMesh = null;
 const colorGold  = new THREE.Color(0xb8973a);
@@ -1384,6 +1417,8 @@ function buildGeometry(segments, count) {
 }
 
 function displaySegments(segments, params) {
+  currentSegments = segments;
+  currentMode     = params.mode || 'structure';
   if (revealAnim) cancelAnimationFrame(revealAnim);
 
   if (currentMesh) {

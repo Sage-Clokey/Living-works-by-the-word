@@ -1143,21 +1143,21 @@ function spiralPreset() {
 // ── Shelter / canopy preset ───────────────────────────────────────────────────
 function shelterPreset() {
   return {
-    mode:                   'tree',
-    steps:                  400,
+    mode:                   'shelter',
+    steps:                  360,
     step_size:              0.17,
-    branching_probability:  0.16,
-    max_tips:               220,
+    branching_probability:  0.14,
+    max_tips:               240,
     max_depth:              10,
-    upward_bias:            0.55,
-    radial_bias:            1.0,
+    upward_bias:            0.75,
+    radial_bias:            0.35,
     twist_strength:         0.0,
-    noise_strength:         0.13,
-    branch_angle_deg:       52,
-    split_probability:      0.72,
+    noise_strength:         0.12,
+    branch_angle_deg:       38,
+    split_probability:      0.68,
     taper:                  0.990,
     min_radius:             0.009,
-    initial_radius:         0.080,
+    initial_radius:         0.072,
   };
 }
 
@@ -1274,6 +1274,12 @@ function adjustDir(pos, dir, p) {
     } else {
       d.x += 0.15;
     }
+  } else if (p.mode === 'shelter') {
+    // Grow up, then arc inward — creates vaulted dome with open interior
+    d.addScaledVector(up, p.upward_bias);
+    const inward = new THREE.Vector3(-pos.x, 0, -pos.z);
+    if (inward.length() > 1e-9)
+      d.addScaledVector(inward.normalize(), p.radial_bias);
   }
 
   return d.normalize();
@@ -1288,7 +1294,19 @@ function runEngine(params) {
   else if (p.mode === 'coral') initDir = new THREE.Vector3(0.15, 1, 0.05).normalize();
   else                         initDir = new THREE.Vector3(0, 1, 0);
 
-  const tips = [new Tip(new THREE.Vector3(0, 0, 0), initDir, p.initial_radius, 0)];
+  const tips = [];
+  if (p.mode === 'shelter') {
+    // Start from a ring of 8 points — each grows up and inward, arching over open space
+    const N = 8, baseR = 2.2;
+    for (let i = 0; i < N; i++) {
+      const a = (i / N) * Math.PI * 2;
+      const x = baseR * Math.cos(a), z = baseR * Math.sin(a);
+      const dir = new THREE.Vector3(-x * 0.25, 1.0, -z * 0.25).normalize();
+      tips.push(new Tip(new THREE.Vector3(x, 0, z), dir, p.initial_radius, 0));
+    }
+  } else {
+    tips.push(new Tip(new THREE.Vector3(0, 0, 0), initDir, p.initial_radius, 0));
+  }
 
   for (let step = 0; step < p.steps; step++) {
     const alive = tips.filter(t => t.alive);

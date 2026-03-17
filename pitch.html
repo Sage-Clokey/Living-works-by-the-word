@@ -20,7 +20,7 @@
   body {
     background: var(--bg);
     color: var(--text);
-    font-family: Georgia, "Times New Roman", serif;
+    font-family: var(--font-heading);
     line-height: 1.75;
     overflow-x: hidden;
   }
@@ -51,7 +51,7 @@
   }
 
   .hero-label {
-    font-family: "Courier New", monospace;
+    font-family: var(--font-mono);
     font-size: 0.62rem;
     letter-spacing: 6px;
     color: var(--gold);
@@ -88,7 +88,7 @@
   .btn {
     display: inline-block;
     padding: 13px 32px;
-    font-family: "Courier New", monospace;
+    font-family: var(--font-mono);
     font-size: 0.62rem;
     letter-spacing: 3px;
     text-transform: uppercase;
@@ -125,7 +125,7 @@
     bottom: 36px;
     left: 50%;
     transform: translateX(-50%);
-    font-family: "Courier New", monospace;
+    font-family: var(--font-mono);
     font-size: 0.58rem;
     letter-spacing: 3px;
     color: var(--dim);
@@ -148,7 +148,7 @@
   }
 
   .eyebrow {
-    font-family: "Courier New", monospace;
+    font-family: var(--font-mono);
     font-size: 0.58rem;
     letter-spacing: 5px;
     color: var(--green);
@@ -182,7 +182,7 @@
     line-height: 1.85;
     max-width: 660px;
     margin-bottom: 20px;
-    font-family: "Helvetica Neue", system-ui, sans-serif;
+    font-family: var(--font-body);
   }
 
   p strong { color: var(--text); font-weight: normal; }
@@ -208,7 +208,7 @@
   }
 
   .contrast-table th {
-    font-family: "Courier New", monospace;
+    font-family: var(--font-mono);
     font-size: 0.58rem;
     letter-spacing: 3px;
     text-transform: uppercase;
@@ -223,7 +223,7 @@
     padding: 14px 20px;
     font-size: 0.88rem;
     border-bottom: 1px solid var(--line);
-    font-family: "Helvetica Neue", system-ui, sans-serif;
+    font-family: var(--font-body);
     color: var(--dim);
     vertical-align: top;
     line-height: 1.6;
@@ -254,7 +254,7 @@
   .tech-card.visible { opacity: 1; transform: translateY(0); }
 
   .tech-num {
-    font-family: "Courier New", monospace;
+    font-family: var(--font-mono);
     font-size: 0.55rem;
     letter-spacing: 3px;
     color: var(--gold);
@@ -306,7 +306,7 @@
   }
 
   .market-label {
-    font-family: "Courier New", monospace;
+    font-family: var(--font-mono);
     font-size: 0.6rem;
     letter-spacing: 2px;
     color: var(--dim);
@@ -329,7 +329,7 @@
   }
 
   .rev-table th {
-    font-family: "Courier New", monospace;
+    font-family: var(--font-mono);
     font-size: 0.56rem;
     letter-spacing: 3px;
     text-transform: uppercase;
@@ -344,7 +344,7 @@
     padding: 14px 20px;
     font-size: 0.88rem;
     border-bottom: 1px solid var(--line);
-    font-family: "Helvetica Neue", system-ui, sans-serif;
+    font-family: var(--font-body);
     color: var(--dim);
     line-height: 1.5;
   }
@@ -376,7 +376,7 @@
   .roadmap-phase.visible { opacity: 1; transform: translateX(0); }
 
   .phase-label {
-    font-family: "Courier New", monospace;
+    font-family: var(--font-mono);
     font-size: 0.58rem;
     letter-spacing: 3px;
     color: var(--gold);
@@ -389,7 +389,7 @@
     margin-top: 6px;
     color: var(--dim);
     font-size: 0.85rem;
-    font-family: Georgia, serif;
+    font-family: var(--font-heading);
     font-style: italic;
     letter-spacing: 0;
   }

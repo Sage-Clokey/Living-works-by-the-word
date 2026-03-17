@@ -20,7 +20,7 @@
   body {
     background: var(--bg);
     color: var(--text);
-    font-family: Georgia, "Times New Roman", serif;
+    font-family: var(--font-heading);
     overflow-x: hidden;
   }
 
@@ -45,7 +45,7 @@
 
   /* Slide number indicator */
   .slide-num {
-    font-family: "Courier New", monospace;
+    font-family: var(--font-mono);
     font-size: 0.54rem;
     letter-spacing: 4px;
     color: var(--dim);
@@ -67,7 +67,7 @@
 
   /* ── SHARED SLIDE TYPOGRAPHY ── */
   .slide-eyebrow {
-    font-family: "Courier New", monospace;
+    font-family: var(--font-mono);
     font-size: 0.6rem;
     letter-spacing: 5px;
     color: var(--green);
@@ -91,7 +91,7 @@
     line-height: 1.85;
     max-width: 640px;
     margin-bottom: 20px;
-    font-family: "Helvetica Neue", system-ui, sans-serif;
+    font-family: var(--font-body);
   }
 
   .slide p strong { color: var(--text); font-weight: normal; }
@@ -153,7 +153,7 @@
   }
 
   .data-table th {
-    font-family: "Courier New", monospace;
+    font-family: var(--font-mono);
     font-size: 0.54rem;
     letter-spacing: 3px;
     text-transform: uppercase;
@@ -168,7 +168,7 @@
     padding: 12px 18px;
     font-size: 0.87rem;
     border-bottom: 1px solid var(--line);
-    font-family: "Helvetica Neue", system-ui, sans-serif;
+    font-family: var(--font-body);
     color: var(--dim);
     line-height: 1.4;
   }
@@ -194,7 +194,7 @@
   }
 
   .card-label {
-    font-family: "Courier New", monospace;
+    font-family: var(--font-mono);
     font-size: 0.54rem;
     letter-spacing: 3px;
     color: var(--gold);
@@ -240,7 +240,7 @@
   }
 
   .mnum-label {
-    font-family: "Courier New", monospace;
+    font-family: var(--font-mono);
     font-size: 0.55rem;
     letter-spacing: 2px;
     color: var(--dim);
@@ -271,7 +271,7 @@
   }
 
   .tl-phase {
-    font-family: "Courier New", monospace;
+    font-family: var(--font-mono);
     font-size: 0.56rem;
     letter-spacing: 3px;
     color: var(--gold);
@@ -284,7 +284,7 @@
     color: var(--dim);
     margin-top: 6px;
     font-style: italic;
-    font-family: Georgia, serif;
+    font-family: var(--font-heading);
     font-size: 0.85rem;
     letter-spacing: 0;
   }
@@ -339,7 +339,7 @@
   }
 
   .progress-label {
-    font-family: "Courier New", monospace;
+    font-family: var(--font-mono);
     font-size: 0.56rem;
     letter-spacing: 3px;
     color: var(--dim);
@@ -363,7 +363,7 @@
   .btn-sm {
     display: inline-block;
     padding: 8px 18px;
-    font-family: "Courier New", monospace;
+    font-family: var(--font-mono);
     font-size: 0.55rem;
     letter-spacing: 2px;
     text-transform: uppercase;

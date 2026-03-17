@@ -33,7 +33,7 @@
   body {
     background: var(--bg);
     color: var(--text);
-    font-family: Georgia, "Times New Roman", serif;
+    font-family: var(--font-heading);
     line-height: 1.75;
     overflow-x: hidden;
   }
@@ -64,7 +64,7 @@
   }
 
   .hero-label {
-    font-family: "Courier New", monospace;
+    font-family: var(--font-mono);
     font-size: 0.62rem;
     letter-spacing: 6px;
     color: var(--green);
@@ -96,7 +96,7 @@
     bottom: 36px;
     left: 50%;
     transform: translateX(-50%);
-    font-family: "Courier New", monospace;
+    font-family: var(--font-mono);
     font-size: 0.58rem;
     letter-spacing: 3px;
     color: var(--dim);
@@ -107,7 +107,7 @@
 
   /* ── EYEBROW ── */
   .eyebrow {
-    font-family: "Courier New", monospace;
+    font-family: var(--font-mono);
     font-size: 0.58rem;
     letter-spacing: 5px;
     text-transform: uppercase;
@@ -186,7 +186,7 @@
     background: rgba(255,255,255,0.03);
     border: 1px solid var(--line);
     color: var(--text);
-    font-family: Georgia, serif;
+    font-family: var(--font-heading);
     font-size: 0.95rem;
     line-height: 1.6;
     padding: 14px 16px;
@@ -200,7 +200,7 @@
   #prompt-input::placeholder { color: var(--dim); font-style: italic; }
 
   .examples-label {
-    font-family: "Courier New", monospace;
+    font-family: var(--font-mono);
     font-size: 0.58rem;
     letter-spacing: 3px;
     text-transform: uppercase;
@@ -218,7 +218,7 @@
     background: transparent;
     border: 1px solid var(--line);
     color: var(--dim);
-    font-family: "Courier New", monospace;
+    font-family: var(--font-mono);
     font-size: 0.6rem;
     letter-spacing: 1px;
     padding: 6px 10px;
@@ -239,7 +239,7 @@
     background: var(--green);
     color: #07090a;
     border: none;
-    font-family: "Courier New", monospace;
+    font-family: var(--font-mono);
     font-size: 0.65rem;
     letter-spacing: 3px;
     text-transform: uppercase;
@@ -251,7 +251,7 @@
   #gen-btn:disabled { opacity: 0.5; cursor: default; }
 
   .status-line {
-    font-family: "Courier New", monospace;
+    font-family: var(--font-mono);
     font-size: 0.62rem;
     color: var(--dim);
     letter-spacing: 1px;
@@ -271,7 +271,7 @@
   .param-row {
     display: flex;
     justify-content: space-between;
-    font-family: "Courier New", monospace;
+    font-family: var(--font-mono);
     font-size: 0.6rem;
     color: var(--dim);
     letter-spacing: 0.5px;
@@ -306,7 +306,7 @@
   }
 
   .viewer-hint {
-    font-family: "Courier New", monospace;
+    font-family: var(--font-mono);
     font-size: 0.58rem;
     color: var(--dim);
     letter-spacing: 1px;
@@ -321,7 +321,7 @@
     background: transparent;
     border: 1px solid var(--line);
     color: var(--dim);
-    font-family: "Courier New", monospace;
+    font-family: var(--font-mono);
     font-size: 0.58rem;
     letter-spacing: 1px;
     padding: 5px 10px;
@@ -378,7 +378,7 @@
   .step-card.visible { opacity: 1; transform: translateY(0); }
 
   .step-num {
-    font-family: "Courier New", monospace;
+    font-family: var(--font-mono);
     font-size: 0.58rem;
     letter-spacing: 3px;
     color: var(--gold);
@@ -446,7 +446,7 @@
   .flow-node:last-child { border-bottom: none; }
 
   .flow-label {
-    font-family: "Courier New", monospace;
+    font-family: var(--font-mono);
     font-size: 0.6rem;
     letter-spacing: 3px;
     text-transform: uppercase;
@@ -508,7 +508,7 @@
   .mode-card:hover { border-color: rgba(122,158,126,0.35); }
 
   .mode-tag {
-    font-family: "Courier New", monospace;
+    font-family: var(--font-mono);
     font-size: 0.58rem;
     letter-spacing: 4px;
     text-transform: uppercase;
@@ -539,7 +539,7 @@
   .kw {
     padding: 3px 8px;
     border: 1px solid var(--line);
-    font-family: "Courier New", monospace;
+    font-family: var(--font-mono);
     font-size: 0.58rem;
     color: var(--dim);
     letter-spacing: 0.5px;

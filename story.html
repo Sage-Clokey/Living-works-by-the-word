@@ -20,7 +20,7 @@
   body {
     background: var(--bg);
     color: var(--text);
-    font-family: Georgia, "Times New Roman", serif;
+    font-family: var(--font-heading);
     line-height: 1.85;
     overflow-x: hidden;
   }
@@ -61,7 +61,7 @@
   }
 
   .opening-label {
-    font-family: "Courier New", monospace;
+    font-family: var(--font-mono);
     font-size: 0.6rem;
     letter-spacing: 6px;
     color: var(--green);
@@ -87,7 +87,7 @@
     line-height: 1.8;
     border-top: 1px solid var(--line);
     padding-top: 28px;
-    font-family: "Helvetica Neue", system-ui, sans-serif;
+    font-family: var(--font-body);
   }
 
   .scroll-hint {
@@ -95,7 +95,7 @@
     bottom: 36px;
     left: 50%;
     transform: translateX(-50%);
-    font-family: "Courier New", monospace;
+    font-family: var(--font-mono);
     font-size: 0.58rem;
     letter-spacing: 3px;
     color: var(--dim);
@@ -118,7 +118,7 @@
   }
 
   .chapter-num {
-    font-family: "Courier New", monospace;
+    font-family: var(--font-mono);
     font-size: 0.56rem;
     letter-spacing: 4px;
     color: var(--dim);
@@ -166,7 +166,7 @@
     max-width: 660px;
   }
 
-  .prose p.dim { color: var(--dim); font-style: italic; font-family: "Helvetica Neue", system-ui, sans-serif; }
+  .prose p.dim { color: var(--dim); font-style: italic; font-family: var(--font-body); }
   .prose p em { color: var(--gold); font-style: normal; }
 
   /* ── FULL-WIDTH IMAGE BREAK ── */
@@ -193,7 +193,7 @@
     position: absolute;
     bottom: 24px;
     right: 32px;
-    font-family: "Courier New", monospace;
+    font-family: var(--font-mono);
     font-size: 0.56rem;
     letter-spacing: 2px;
     color: rgba(221,217,204,0.5);
@@ -273,7 +273,7 @@
   .principle.visible { opacity: 1; transform: translateY(0); }
 
   .principle-label {
-    font-family: "Courier New", monospace;
+    font-family: var(--font-mono);
     font-size: 0.56rem;
     letter-spacing: 4px;
     color: var(--green);
@@ -315,7 +315,7 @@
     color: var(--dim);
     max-width: 520px;
     margin: 0 auto 48px;
-    font-family: "Helvetica Neue", system-ui, sans-serif;
+    font-family: var(--font-body);
     opacity: 0;
     transition: opacity 0.8s ease 0.2s;
   }
@@ -327,7 +327,7 @@
   .btn {
     display: inline-block;
     padding: 13px 30px;
-    font-family: "Courier New", monospace;
+    font-family: var(--font-mono);
     font-size: 0.6rem;
     letter-spacing: 3px;
     text-transform: uppercase;
@@ -354,6 +354,7 @@
     <li><a href="moral-framework.html">Moral Framework</a></li>
     <li><a href="sagent.html">The Sagent</a></li>
     <li><a href="true-republic.html">True Republic</a></li>
+    <li><a href="channel.html">Channel</a></li>
     <li><a href="pitch.html">Investor Hub</a></li>
     <li><a href="competitive.html">Competitive</a></li>
     <li><a href="design-lab.html">Design Lab</a></li>

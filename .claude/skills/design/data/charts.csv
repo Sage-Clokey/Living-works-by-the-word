@@ -1,0 +1,13 @@
+data_type,best_chart,colors,accessibility,library
+Time series trend,Line chart,Single accent color on dark or light base,Add data labels at endpoints use aria-label,Chart.js / Recharts
+Part-to-whole comparison,Donut chart,Categorical palette max 5 segments,Include a legend with values avoid tiny slices,Chart.js / Recharts
+Category comparison,Horizontal bar chart,Single hue different shades per bar,Sort bars by value label values on bars,Chart.js / D3.js
+Distribution,Histogram,Gradient fill from light to accent,Include axis labels and bin size notation,D3.js / Observable Plot
+Correlation between two variables,Scatter plot,Accent dots on neutral background,Use shape + color for dual encoding,D3.js / Vega-Lite
+Geographic data,Choropleth map,Sequential single-hue palette,Include a colour legend with value ranges,D3.js / Mapbox GL
+Progress toward a goal,Radial/gauge chart,Green-to-red gradient or brand accent,Show percentage value as text inside,Chart.js custom / D3.js
+Ranking or leaderboard,Sorted horizontal bar,Highlight top 3 with accent rest muted,Number rank labels on bars,Chart.js / Recharts
+Multi-metric dashboard KPI,Stat cards with sparklines,Green for positive delta red for negative,Screen reader text for each KPI value,Recharts sparkline / custom
+Funnel conversion,Funnel chart,Gradient from primary to muted as steps narrow,Label each step with count and % drop,D3.js / custom SVG
+Network relationships,Force-directed graph,Node color by category edge opacity by weight,Limit to under 100 nodes for readability,D3.js / Sigma.js
+Real-time streaming data,Live line chart with sliding window,Single accent line on dark background,Announce significant threshold crossings,Chart.js streaming plugin

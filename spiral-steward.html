@@ -25,7 +25,7 @@
   body {
     background: var(--bg);
     color: var(--text);
-    font-family: Georgia, "Times New Roman", serif;
+    font-family: var(--font-heading);
     line-height: 1.85;
     overflow-x: hidden;
   }
@@ -177,7 +177,7 @@
   .flame-text { max-width: var(--max); font-size: clamp(1rem, 2vw, 1.2rem); line-height: 1.9; margin-bottom: 20px; }
   .flame-cycle {
     margin: 48px 0; max-width: var(--max);
-    font-family: "Courier New", monospace;
+    font-family: var(--font-mono);
     font-size: 1rem; letter-spacing: 3px;
     color: var(--flame); text-align: center;
     padding: 24px; border: 1px solid rgba(74,170,90,0.2);
@@ -195,7 +195,7 @@
   .steps li::before {
     content: counter(step, decimal-leading-zero);
     position: absolute; left: 0;
-    font-family: "Courier New", monospace; font-size: 0.7rem;
+    font-family: var(--font-mono); font-size: 0.7rem;
     color: var(--red); letter-spacing: 1px;
   }
 

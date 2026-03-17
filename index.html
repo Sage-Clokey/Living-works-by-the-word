@@ -4,25 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Living Architecture — Not Blocks. Spirals.</title>
+<link rel="stylesheet" href="site.css">
 <style>
-  :root {
-    --bg:       #07090a;
-    --bg2:      #0c0f0c;
-    --text:     #ddd9cc;
-    --dim:      #6a6860;
-    --green:    #7a9e7e;
-    --gold:     #b8973a;
-    --line:     rgba(255,255,255,0.07);
-  }
-
   * { box-sizing: border-box; margin: 0; padding: 0; }
-
-  html { scroll-behavior: smooth; }
 
   body {
     background: var(--bg);
     color: var(--text);
-    font-family: Georgia, "Times New Roman", serif;
+    font-family: var(--font-heading, Georgia, serif);
     line-height: 1.7;
     overflow-x: hidden;
   }
@@ -61,7 +50,7 @@
     letter-spacing: 2px;
     text-transform: uppercase;
     transition: color 0.3s;
-    font-family: "Courier New", monospace;
+    font-family: var(--font-mono);
   }
 
   .nav-links a:hover { color: var(--text); }
@@ -91,7 +80,7 @@
   }
 
   .hero-label {
-    font-family: "Courier New", monospace;
+    font-family: var(--font-mono);
     font-size: 0.65rem;
     letter-spacing: 6px;
     color: var(--green);
@@ -121,7 +110,7 @@
     bottom: 36px;
     left: 50%;
     transform: translateX(-50%);
-    font-family: "Courier New", monospace;
+    font-family: var(--font-mono);
     font-size: 0.6rem;
     letter-spacing: 3px;
     color: var(--dim);
@@ -143,7 +132,7 @@
   }
 
   .section-label {
-    font-family: "Courier New", monospace;
+    font-family: var(--font-mono);
     font-size: 0.6rem;
     letter-spacing: 5px;
     color: var(--green);
@@ -201,7 +190,7 @@
 
   .quote-source {
     margin-top: 16px;
-    font-family: "Courier New", monospace;
+    font-family: var(--font-mono);
     font-size: 0.6rem;
     letter-spacing: 2px;
     color: var(--dim);
@@ -257,7 +246,7 @@
     bottom: 0; left: 0; right: 0;
     padding: 12px 16px;
     background: linear-gradient(transparent, rgba(7,9,10,0.85));
-    font-family: "Courier New", monospace;
+    font-family: var(--font-mono);
     font-size: 0.6rem;
     letter-spacing: 2px;
     color: var(--dim);
@@ -311,10 +300,11 @@
 
   .sim-text p {
     color: var(--dim);
-    font-size: 0.95rem;
+    font-size: 1rem;
     line-height: 1.8;
     margin-bottom: 20px;
-    font-family: "Helvetica Neue", system-ui, sans-serif;
+    font-family: var(--font-body, 'Helvetica Neue', system-ui, sans-serif);
+    max-width: 65ch;
   }
 
   .keyword-row {
@@ -328,7 +318,7 @@
     padding: 5px 12px;
     border: 1px solid var(--line);
     border-radius: 2px;
-    font-family: "Courier New", monospace;
+    font-family: var(--font-mono);
     font-size: 0.65rem;
     color: var(--dim);
     letter-spacing: 1px;
@@ -341,6 +331,26 @@
     border-top: 1px solid var(--line);
     text-align: center;
     padding: 140px 48px;
+  }
+
+  .cta-link {
+    display: inline-block;
+    margin-top: 40px;
+    padding: 12px 28px;
+    border: 1px solid rgba(122,158,126,0.25);
+    font-family: var(--font-mono, 'Courier New', monospace);
+    font-size: 0.65rem;
+    letter-spacing: 3px;
+    color: var(--dim);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .cta-link:hover,
+  .cta-link:focus-visible {
+    color: var(--green);
+    border-color: rgba(122,158,126,0.5);
   }
 
   .close-word {
@@ -358,7 +368,7 @@
 
   .close-sub {
     margin-top: 48px;
-    font-family: "Courier New", monospace;
+    font-family: var(--font-mono);
     font-size: 0.65rem;
     letter-spacing: 3px;
     color: var(--dim);
@@ -407,7 +417,7 @@
     bottom: 0; left: 0; right: 0;
     padding: 12px 16px;
     background: linear-gradient(transparent, rgba(7,9,10,0.9));
-    font-family: "Courier New", monospace;
+    font-family: var(--font-mono);
     font-size: 0.58rem;
     letter-spacing: 2px;
     color: var(--dim);
@@ -452,7 +462,7 @@
   }
 
   .author-role {
-    font-family: "Courier New", monospace;
+    font-family: var(--font-mono);
     font-size: 0.62rem;
     letter-spacing: 3px;
     color: var(--green);
@@ -462,10 +472,10 @@
 
   .author-bio p {
     color: var(--dim);
-    font-size: 0.92rem;
+    font-size: 1rem;
     line-height: 1.8;
-    max-width: 520px;
-    font-family: "Helvetica Neue", system-ui, sans-serif;
+    max-width: 65ch;
+    font-family: var(--font-body, 'Helvetica Neue', system-ui, sans-serif);
   }
 
   /* ── FOOTER ── */
@@ -478,7 +488,7 @@
   }
 
   .footer-left {
-    font-family: "Courier New", monospace;
+    font-family: var(--font-mono);
     font-size: 0.6rem;
     color: var(--dim);
     letter-spacing: 2px;
@@ -490,7 +500,7 @@
   }
 
   .doc-link {
-    font-family: "Courier New", monospace;
+    font-family: var(--font-mono);
     font-size: 0.6rem;
     letter-spacing: 2px;
     color: var(--dim);
@@ -522,7 +532,6 @@
 
   .frames-strip img:hover { filter: brightness(1) saturate(1); }
 </style>
-<link rel="stylesheet" href="site.css">
 </head>
 <body>
 
@@ -536,6 +545,7 @@
     <li><a href="moral-framework.html">Moral Framework</a></li>
     <li><a href="sagent.html">The Sagent</a></li>
     <li><a href="true-republic.html">True Republic</a></li>
+    <li><a href="channel.html">Channel</a></li>
     <li><a href="posters.html">Posters</a></li>
     <li><a href="pitch.html">Investor Hub</a></li>
     <li><a href="competitive.html">Competitive</a></li>
@@ -766,7 +776,7 @@
   <span class="close-word">Not blocks.</span>
   <span class="close-word">Spirals.</span>
   <p class="close-sub">Morphogenetic Architecture · Living Works by the Word</p>
-  <a href="moral-framework.html" style="display:inline-block;margin-top:40px;padding:12px 28px;border:1px solid rgba(100,100,255,0.25);font-family:'Courier New',monospace;font-size:0.65rem;letter-spacing:3px;color:var(--dim);text-decoration:none;text-transform:uppercase;transition:all 0.2s" onmouseover="this.style.color='#7a9e7e';this.style.borderColor='rgba(122,158,126,0.4)'" onmouseout="this.style.color='';this.style.borderColor=''">Read the Moral Framework →</a>
+  <a href="moral-framework.html" class="cta-link">Read the Moral Framework →</a>
 </section>
 
 <!-- FOOTER -->

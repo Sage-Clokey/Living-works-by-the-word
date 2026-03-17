@@ -23,7 +23,7 @@
     body {
       background: var(--bg);
       color: var(--text);
-      font-family: Georgia, "Times New Roman", serif;
+      font-family: var(--font-heading);
       line-height: 1.85;
       overflow-x: hidden;
     }
@@ -38,7 +38,7 @@
       border-bottom: 1px solid var(--line);
     }
     .nav-logo {
-      font-family: "Courier New", monospace;
+      font-family: var(--font-mono);
       font-size: 0.7rem; letter-spacing: 4px;
       color: var(--flame); text-decoration: none; text-transform: uppercase;
     }
@@ -46,7 +46,7 @@
     .nav-links a {
       color: var(--dim); text-decoration: none;
       font-size: 0.62rem; letter-spacing: 2px;
-      text-transform: uppercase; font-family: "Courier New", monospace;
+      text-transform: uppercase; font-family: var(--font-mono);
       transition: color 0.2s;
     }
     .nav-links a:hover { color: var(--text); }
@@ -82,7 +82,7 @@
     }
     .hero-inner { position: relative; z-index: 2; max-width: 900px; }
     .eyebrow {
-      font-family: "Courier New", monospace;
+      font-family: var(--font-mono);
       font-size: 0.62rem; letter-spacing: 5px;
       color: var(--flame); text-transform: uppercase; margin-bottom: 28px;
     }
@@ -105,7 +105,7 @@
     .wide     { max-width: 960px;        margin: 0 auto; padding: 0 24px; }
     .chapter  { padding: 80px 48px;      border-top: 1px solid var(--line); }
     .chapter-num {
-      font-family: "Courier New", monospace;
+      font-family: var(--font-mono);
       font-size: 0.58rem; letter-spacing: 4px;
       color: var(--dim); text-transform: uppercase; margin-bottom: 20px;
     }
@@ -117,7 +117,7 @@
     h3 {
       font-size: 1.1rem; font-weight: normal;
       color: var(--gold); margin-bottom: 12px;
-      font-family: "Courier New", monospace;
+      font-family: var(--font-mono);
       letter-spacing: 1px;
     }
     p {
@@ -140,7 +140,7 @@
     }
     blockquote p { font-size: 1.05rem; font-style: italic; margin-bottom: 10px; }
     blockquote cite {
-      font-family: "Courier New", monospace;
+      font-family: var(--font-mono);
       font-size: 0.58rem; letter-spacing: 2px;
       color: var(--dim); text-transform: uppercase; font-style: normal;
     }
@@ -158,7 +158,7 @@
     }
     .standout p em { color: var(--gold); font-style: normal; }
     .standout cite {
-      font-family: "Courier New", monospace;
+      font-family: var(--font-mono);
       font-size: 0.6rem; letter-spacing: 3px;
       color: var(--dim); text-transform: uppercase;
     }
@@ -203,7 +203,7 @@
       border-top: 2px solid var(--flame);
     }
     .tech-num {
-      font-family: "Courier New", monospace;
+      font-family: var(--font-mono);
       font-size: 0.58rem; letter-spacing: 3px;
       color: var(--flame); margin-bottom: 12px;
     }
@@ -220,7 +220,7 @@
       text-align: left; padding: 10px 14px;
       background: rgba(74,170,90,0.08);
       color: var(--flame);
-      font-family: "Courier New", monospace;
+      font-family: var(--font-mono);
       font-size: 0.6rem; letter-spacing: 2px;
       text-transform: uppercase;
       border-bottom: 1px solid rgba(74,170,90,0.3);
@@ -248,7 +248,7 @@
     .svb-col.block-col  { background: var(--bg); border-top: 3px solid var(--red); }
     .svb-col.spiral-col { background: rgba(10,20,10,0.6); border-top: 3px solid var(--flame); }
     .svb-col h3 {
-      font-family: "Courier New", monospace;
+      font-family: var(--font-mono);
       font-size: 0.7rem; letter-spacing: 5px;
       text-transform: uppercase; margin-bottom: 24px;
       color: var(--flame);
@@ -281,7 +281,7 @@
       gap: 2px; max-width: 960px; margin: 32px 0;
     }
     .rev-card { padding: 28px 24px; background: var(--bg2); border-top: 2px solid var(--gold); }
-    .rev-card h3 { color: var(--gold); font-size: 0.75rem; letter-spacing: 2px; margin-bottom: 10px; font-family: "Courier New", monospace; }
+    .rev-card h3 { color: var(--gold); font-size: 0.75rem; letter-spacing: 2px; margin-bottom: 10px; font-family: var(--font-mono); }
     .rev-card p  { font-size: 0.86rem; color: var(--dim); margin-bottom: 0; max-width: 100%; }
 
     /* ── ROADMAP ── */
@@ -297,7 +297,7 @@
       background: var(--flame);
     }
     .phase-label {
-      font-family: "Courier New", monospace;
+      font-family: var(--font-mono);
       font-size: 0.58rem; letter-spacing: 3px;
       color: var(--flame); text-transform: uppercase; margin-bottom: 6px;
     }
@@ -329,7 +329,7 @@
     }
     .cta-links { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; }
     .cta-link {
-      font-family: "Courier New", monospace;
+      font-family: var(--font-mono);
       font-size: 0.65rem; letter-spacing: 3px;
       text-transform: uppercase; text-decoration: none;
       padding: 14px 28px;
@@ -348,7 +348,7 @@
       flex-wrap: wrap; gap: 16px;
     }
     footer span {
-      font-family: "Courier New", monospace;
+      font-family: var(--font-mono);
       font-size: 0.58rem; letter-spacing: 2px;
       color: var(--dim); text-transform: uppercase;
     }
@@ -367,6 +367,7 @@
     <li><a href="moral-framework.html">Moral Framework</a></li>
     <li><a href="sagent.html">The Sagent</a></li>
     <li><a href="true-republic.html">True Republic</a></li>
+    <li><a href="channel.html">Channel</a></li>
     <li><a href="posters.html">Posters</a></li>
     <li><a href="pitch.html">Investor Hub</a></li>
     <li><a href="competitive.html">Competitive</a></li>

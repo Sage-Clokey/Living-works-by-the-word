@@ -1685,7 +1685,7 @@ function getPdfHref(bookId, partLabel, chNum) {
 let chapterContent = {};
 (function loadContent() {
   const script = document.createElement('script');
-  script.src = 'chapters_content.js?v=3';
+  script.src = 'chapters_content.js?v=4';
   script.onload = () => { chapterContent = chaptersContent; console.log('Chapter content loaded:', Object.keys(chapterContent).length, 'chapters'); };
   script.onerror = () => { console.warn('chapters_content.js not found — reader will show fallback text'); };
   document.head.appendChild(script);

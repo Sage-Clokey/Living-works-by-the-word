@@ -1742,50 +1742,48 @@ let chapterContent = {};
 
     let processed = '';
     let firstBodyParagraph = true;
+    const headerPatterns = /^(book\s+i|part\s+(one|two|three|four|five|\d)|chapter\s+\d|prologue|epilogue|the\s+sagent\s+creed|the\s+spiral\s+(and|steward)|sheep\s+among|the\s+shaken|the\s+name|the\s+architecture|the\s+fibonacci|the\s+mythology|the\s+true\s+republic|living\s+algorithms|how\s+a\s+forest|livingworks|a\s+note\s+before|the\s+industrial)/i;
 
     for (let i = 0; i < elements.length; i++) {
       const el = elements[i];
       const text = el.textContent.trim();
       if (!text) continue;
 
-      if (i < 4) {
-        const lower = text.toLowerCase();
-        if (lower.includes('book i') || lower.includes('book ii') || lower.includes('book iii') ||
-            lower.includes('part ') || lower.includes('chapter ') || lower.includes('prologue') ||
-            lower.includes('epilogue') || lower.includes('sagent creed') || lower.includes('spiral and') ||
-            lower.includes('spiral steward')) continue;
-      }
+      if (headerPatterns.test(text) && text.length < 120) continue;
 
       if (text === 'The Living Age Trilogy') {
-        processed += `<p class="footer-line">${el.innerHTML}</p>`;
+        processed += `<p class="footer-line">The Living Age Trilogy</p>`;
         continue;
       }
 
       const sectionMatch = text.match(/^([IVXL]+)\.\s+(.+)/);
-      if (el.tagName === 'H3' || (el.tagName === 'P' && sectionMatch)) {
-        if (sectionMatch) {
+      if (el.tagName === 'H3' || sectionMatch) {
+        if (sectionMatch || (el.tagName === 'H3' && text.length < 120)) {
           processed += `<div class="section-divider"><span>${text}</span></div>`;
-          firstBodyParagraph = true;
-          continue;
-        }
-        if (text.length < 100) {
-          processed += `<div class="section-divider"><span>${el.innerHTML}</span></div>`;
           firstBodyParagraph = true;
           continue;
         }
       }
 
       if (el.tagName === 'P') {
-        const isItalicLine = el.querySelector('em') && el.children.length === 1 && el.children[0].tagName === 'EM';
-        if (isItalicLine && i > elements.length - 8) {
+        const isFullItalic = el.querySelector('em') && el.children.length === 1 && el.children[0].tagName === 'EM';
+
+        if (isFullItalic && i > elements.length - 10) {
           processed += `<p class="closing">${el.innerHTML}</p>`;
           continue;
         }
-        if (firstBodyParagraph && text.length > 40) {
+
+        if (isFullItalic && firstBodyParagraph) {
+          processed += `<p class="epigraph">${el.innerHTML}</p>`;
+          continue;
+        }
+
+        if (firstBodyParagraph && text.length > 40 && !isFullItalic) {
           processed += `<p class="drop-cap no-indent">${el.innerHTML}</p>`;
           firstBodyParagraph = false;
           continue;
         }
+
         processed += `<p>${el.innerHTML}</p>`;
         firstBodyParagraph = false;
         continue;

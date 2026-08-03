@@ -997,22 +997,35 @@ const trilogy = [
           { num: "21", title: "Art and the Green Knight", action: "write_new", source: "" },
           { num: "22", title: "Joe and the Storm", action: "write_new", source: "" },
           { num: "23", title: "The Storm Spreads the Seeds", action: "write_new", source: "" },
-          { num: "24", title: "Gumby and the Cartel", action: "use_as_is", source: "writings/gumby-and-the-cartel.md" }
+          { num: "24", title: "Gumby and the Cartel", action: "use_as_is", source: "writings/gumby-and-the-cartel.md" },
+          { num: "25", title: "The Bones of Joseph", action: "write_new", source: "writings/drafts/the_bones_of_joseph_rewrite.md" }
         ]
       },
       {
         label: "Part 5",
         title: "Sheep Among Wolves",
         chapters: [
-          { num: "25", title: "The Enemy That Feeds on Conflict", action: "write_new", source: "" },
-          { num: "26", title: "Roots, Not Branches", action: "write_new", source: "" },
-          { num: "27", title: "The Blue to the Green", action: "write_new", source: "" },
-          { num: "28", title: "The Sagent Narrative", action: "use_as_is", source: "writings/the-sagent-narrative.md" },
-          { num: "29", title: "The Troll God", action: "write_new", source: "raw_notes.json \u2014 the_troll_god_doctrine" },
-          { num: "30", title: "Redeeming the Enemy", action: "write_new", source: "raw_notes.json \u2014 spiritual_teachings" },
-          { num: "31", title: "The Demon Breaker", action: "write_new", source: "raw_notes.json \u2014 the_sagent_identity" },
-          { num: "32", title: "The Army of God", action: "write_new", source: "raw_notes.json \u2014 spiritual_teachings" },
-          { num: "33", title: "The Guardian\u2019s Covenant", action: "write_new", source: "raw_notes.json \u2014 protection_philosophy" }
+          { num: "26", title: "The Enemy That Feeds on Conflict", action: "write_new", source: "" },
+          { num: "27", title: "Roots, Not Branches", action: "write_new", source: "" },
+          { num: "28", title: "The Blue to the Green", action: "write_new", source: "" },
+          { num: "29", title: "The Sagent Narrative", action: "use_as_is", source: "writings/the-sagent-narrative.md" },
+          { num: "30", title: "The Troll God", action: "write_new", source: "raw_notes.json \u2014 the_troll_god_doctrine" },
+          { num: "31", title: "Redeeming the Enemy", action: "write_new", source: "raw_notes.json \u2014 spiritual_teachings" },
+          { num: "32", title: "The Demon Breaker", action: "write_new", source: "raw_notes.json \u2014 the_sagent_identity" },
+          { num: "33", title: "The Army of God", action: "write_new", source: "raw_notes.json \u2014 spiritual_teachings" },
+          { num: "34", title: "The Guardian\u2019s Covenant", action: "write_new", source: "raw_notes.json \u2014 protection_philosophy" },
+          { num: "35", title: "Be Principled Even When It Costs You", action: "use_as_is", source: "chapter_drafts/book1_ch35_be_principled.md" },
+          { num: "36", title: "The Prestige", action: "use_as_is", source: "chapter_drafts/book1_ch36_the_prestige.md" },
+          { num: "37", title: "The Path of the Sagent", action: "use_as_is", source: "chapter_drafts/book1_ch37_the_path_of_the_sagent.md" },
+          { num: "38", title: "Awakening and Purpose", action: "use_as_is", source: "chapter_drafts/book1_ch38_awakening_and_purpose.md" }
+        ]
+      },
+      {
+        label: "Epilogue",
+        title: "The Heir of Arthur",
+        isEpilogue: true,
+        chapters: [
+          { num: "E", title: "The Heir of Arthur", action: "use_as_is", source: "chapter_drafts/book1_epilogue.md" }
         ]
       }
     ]
@@ -1314,15 +1327,21 @@ const pdfPaths = {
   "book1|Part 4|22": "Book I - The Sagent Creed/Part 4 - The Fibonacci Spiral Through the Generations/Chapter 22 - Joe and the Storm.pdf",
   "book1|Part 4|23": "Book I - The Sagent Creed/Part 4 - The Fibonacci Spiral Through the Generations/Chapter 23 - The Storm Spreads the Seeds.pdf",
   "book1|Part 4|24": "Book I - The Sagent Creed/Part 4 - The Fibonacci Spiral Through the Generations/Chapter 24 - Gumby and the Cartel.pdf",
-  "book1|Part 5|25": "Book I - The Sagent Creed/Part 5 - Sheep Among Wolves/Chapter 25 - The Enemy That Feeds on Conflict.pdf",
-  "book1|Part 5|26": "Book I - The Sagent Creed/Part 5 - Sheep Among Wolves/Chapter 26 - Roots, Not Branches.pdf",
-  "book1|Part 5|27": "Book I - The Sagent Creed/Part 5 - Sheep Among Wolves/Chapter 27 - The Blue to the Green.pdf",
-  "book1|Part 5|28": "Book I - The Sagent Creed/Part 5 - Sheep Among Wolves/Chapter 28 - The Sagent Narrative.pdf",
-  "book1|Part 5|29": "Book I - The Sagent Creed/Part 5 - Sheep Among Wolves/Chapter 29 - The Troll God.pdf",
-  "book1|Part 5|30": "Book I - The Sagent Creed/Part 5 - Sheep Among Wolves/Chapter 30 - Redeeming the Enemy.pdf",
-  "book1|Part 5|31": "Book I - The Sagent Creed/Part 5 - Sheep Among Wolves/Chapter 31 - The Demon Breaker.pdf",
-  "book1|Part 5|32": "Book I - The Sagent Creed/Part 5 - Sheep Among Wolves/Chapter 32 - The Army of God.pdf",
-  "book1|Part 5|33": "Book I - The Sagent Creed/Part 5 - Sheep Among Wolves/Chapter 33 - The Guardian's Covenant.pdf",
+  "book1|Part 4|25": "Book I - The Sagent Creed/Part 4 - The Fibonacci Spiral Through the Generations/Chapter 25 - The Bones of Joseph.pdf",
+  "book1|Part 5|26": "Book I - The Sagent Creed/Part 5 - Sheep Among Wolves/Chapter 26 - The Enemy That Feeds on Conflict.pdf",
+  "book1|Part 5|27": "Book I - The Sagent Creed/Part 5 - Sheep Among Wolves/Chapter 27 - Roots, Not Branches.pdf",
+  "book1|Part 5|28": "Book I - The Sagent Creed/Part 5 - Sheep Among Wolves/Chapter 28 - The Blue to the Green.pdf",
+  "book1|Part 5|29": "Book I - The Sagent Creed/Part 5 - Sheep Among Wolves/Chapter 29 - The Sagent Narrative.pdf",
+  "book1|Part 5|30": "Book I - The Sagent Creed/Part 5 - Sheep Among Wolves/Chapter 30 - The Troll God.pdf",
+  "book1|Part 5|31": "Book I - The Sagent Creed/Part 5 - Sheep Among Wolves/Chapter 31 - Redeeming the Enemy.pdf",
+  "book1|Part 5|32": "Book I - The Sagent Creed/Part 5 - Sheep Among Wolves/Chapter 32 - The Demon Breaker.pdf",
+  "book1|Part 5|33": "Book I - The Sagent Creed/Part 5 - Sheep Among Wolves/Chapter 33 - The Army of God.pdf",
+  "book1|Part 5|34": "Book I - The Sagent Creed/Part 5 - Sheep Among Wolves/Chapter 34 - The Guardian's Covenant.pdf",
+  "book1|Part 5|35": "Book I - The Sagent Creed/Part 5 - Sheep Among Wolves/Chapter 35 - Be Principled Even When It Costs You.pdf",
+  "book1|Part 5|36": "Book I - The Sagent Creed/Part 5 - Sheep Among Wolves/Chapter 36 - The Prestige.pdf",
+  "book1|Part 5|37": "Book I - The Sagent Creed/Part 5 - Sheep Among Wolves/Chapter 37 - The Path of the Sagent.pdf",
+  "book1|Part 5|38": "Book I - The Sagent Creed/Part 5 - Sheep Among Wolves/Chapter 38 - Awakening and Purpose.pdf",
+  "book1|Epilogue|E": "Book I - The Sagent Creed/Epilogue/Epilogue - The Heir of Arthur.pdf",
   // Book II
   "book2|Prologue|P": "Book II - The Spiral and the Block/Prologue/Prologue - The Stories Already Know.pdf",
   "book2|Part 1|1": "Book II - The Spiral and the Block/Part 1 - The True Republic/Chapter 01 - Why Empires Always Collapse.pdf",

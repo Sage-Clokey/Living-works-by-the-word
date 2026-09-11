@@ -691,6 +691,7 @@ body {
   padding: 0 28px 120px;
 }
 
+/* ---- Chapter opening ---- */
 .chapter-opening {
   text-align: center;
   padding: 80px 0 60px;
@@ -743,6 +744,7 @@ body {
   letter-spacing: 8px;
 }
 
+/* ---- Section dividers ---- */
 .reader-content .section-divider {
   text-align: center;
   margin: 48px 0 40px;
@@ -770,6 +772,7 @@ body {
   letter-spacing: 0.02em;
 }
 
+/* ---- Body text ---- */
 .reader-content h1 {
   font-family: var(--serif);
   font-weight: 400;
@@ -932,6 +935,7 @@ body {
   margin-bottom: 8px;
 }
 
+/* ---- Chapter end ornament ---- */
 .chapter-end {
   text-align: center;
   margin: 60px 0 40px;
@@ -1169,7 +1173,7 @@ const trilogy = [
           { num: "32", title: "The Demon Breaker", action: "write_new", source: "raw_notes.json \u2014 the_sagent_identity" },
           { num: "33", title: "The Army of God", action: "write_new", source: "raw_notes.json \u2014 spiritual_teachings" },
           { num: "34", title: "The Guardian\u2019s Covenant", action: "write_new", source: "raw_notes.json \u2014 protection_philosophy" },
-          { num: "35", title: "Be Principled Even When It Costs You", action: "use_as_is", source: "chapter_drafts/book1_ch35_be_principled.md" },
+          { num: "35", title: "Be Principled Even When It Costs You", action: "write_new", source: "raw_notes.json \u2014 clokey_family_legacy + protection_philosophy" },
           { num: "36", title: "The Prestige", action: "use_as_is", source: "chapter_drafts/book1_ch36_the_prestige.md" },
           { num: "37", title: "The Path of the Sagent", action: "use_as_is", source: "chapter_drafts/book1_ch37_the_path_of_the_sagent.md" },
           { num: "38", title: "Awakening and Purpose", action: "use_as_is", source: "chapter_drafts/book1_ch38_awakening_and_purpose.md" }
@@ -1248,29 +1252,30 @@ const trilogy = [
           { num: "37", title: "The Trilogy of Light", action: "write_new", source: "raw_notes.json \u2014 the_prestige_framework" },
           { num: "38", title: "The Jester Prophet", action: "write_new", source: "raw_notes.json \u2014 ron_paul" },
           { num: "39", title: "The Eight Pillars", action: "write_new", source: "raw_notes.json \u2014 multi_faith_nap_alignment" },
-          { num: "40", title: "The Beast Behind", action: "write_new", source: "raw_notes.json \u2014 historical_analysis" }
+          { num: "40", title: "The Beast Behind", action: "write_new", source: "raw_notes.json \u2014 historical_analysis" },
+          { num: "41", title: "Secret Jewish Space Lasers", action: "write_new", source: "notes_blue_red_green_symbolism.md" }
         ]
       },
       {
         label: "Part 3",
         title: "The Eight Pillars",
         chapters: [
-          { num: "41", title: "Pillar I: Life Is Decentralized", action: "rewrite_as_prose", source: "PILLAR 1" },
-          { num: "42", title: "Pillar II: Truth Emerges from Individuals", action: "rewrite_as_prose", source: "PILLAR 2" },
-          { num: "43", title: "Pillar III: Power Corrupts Centralized Systems", action: "rewrite_as_prose", source: "PILLAR 3" },
-          { num: "44", title: "Pillar IV: Voluntary Cooperation Is Natural", action: "rewrite_as_prose", source: "PILLAR 4" },
-          { num: "45", title: "Pillar V: Wisdom Transcends Authority", action: "rewrite_as_prose", source: "PILLAR 5" },
-          { num: "46", title: "Pillar VI: Stories Shape Civilizations", action: "rewrite_as_prose", source: "PILLAR 6" },
-          { num: "47", title: "Pillar VII: The Individual Is Sacred", action: "rewrite_as_prose", source: "PILLAR 7" },
-          { num: "48", title: "Pillar VIII: The Spiral Is the Pattern of Life", action: "rewrite_as_prose", source: "PILLAR 8" }
+          { num: "42", title: "Pillar I: Life Is Decentralized", action: "rewrite_as_prose", source: "PILLAR 1" },
+          { num: "43", title: "Pillar II: Truth Emerges from Individuals", action: "rewrite_as_prose", source: "PILLAR 2" },
+          { num: "44", title: "Pillar III: Power Corrupts Centralized Systems", action: "rewrite_as_prose", source: "PILLAR 3" },
+          { num: "45", title: "Pillar IV: Voluntary Cooperation Is Natural", action: "rewrite_as_prose", source: "PILLAR 4" },
+          { num: "46", title: "Pillar V: Wisdom Transcends Authority", action: "rewrite_as_prose", source: "PILLAR 5" },
+          { num: "47", title: "Pillar VI: Stories Shape Civilizations", action: "rewrite_as_prose", source: "PILLAR 6" },
+          { num: "48", title: "Pillar VII: The Individual Is Sacred", action: "rewrite_as_prose", source: "PILLAR 7" },
+          { num: "49", title: "Pillar VIII: The Spiral Is the Pattern of Life", action: "rewrite_as_prose", source: "PILLAR 8" }
         ]
       },
       {
         label: "Part 4",
         title: "The Perfect Agent",
         chapters: [
-          { num: "49", title: "The Perfect Agent: Bible and Quran", action: "use_as_is", source: "writings/the-perfect-agent-bible-and-quran.md" },
-          { num: "50", title: "The Skywalker Spiral", action: "rewrite_as_prose", source: "EP09 \u2014 The Skywalker Spiral" }
+          { num: "50", title: "The Perfect Agent: Bible and Quran", action: "use_as_is", source: "writings/the-perfect-agent-bible-and-quran.md" },
+          { num: "51", title: "The Skywalker Spiral", action: "rewrite_as_prose", source: "EP09 \u2014 The Skywalker Spiral" }
         ]
       }
     ]
@@ -1301,7 +1306,7 @@ const trilogy = [
           { num: "6", title: "The Necessary Death", action: "use_as_is", source: "chapter_drafts/book3_ch06.md" },
           { num: "7", title: "The Green Flame: A Declaration", action: "use_as_is", source: "chapter_drafts/book3_ch07.md" },
           { num: "8", title: "The Triangle That Cannot Be Divided", action: "write_new", source: "writings/drafts/three_minute_speech.md" },
-          { num: "9", title: "The True Republic", action: "write_new", source: "raw_notes.json \u2014 the_true_republic" },
+          { num: "9", title: "The True Republic", action: "write_new", source: "trilogy-chapters/Chapter 08 - The True Republic.md" },
           { num: "10", title: "The Healer\u2019s Return", action: "write_new", source: "raw_notes.json \u2014 telehealth_and_healthcare" }
         ]
       },
@@ -1541,16 +1546,17 @@ const pdfPaths = {
   "book2|Part 2|38": "Book II - The Spiral and the Block/Part 2 - The Mythology of Media/Chapter 38 - The Jester Prophet.pdf",
   "book2|Part 2|39": "Book II - The Spiral and the Block/Part 2 - The Mythology of Media/Chapter 39 - The Eight Pillars.pdf",
   "book2|Part 2|40": "Book II - The Spiral and the Block/Part 2 - The Mythology of Media/Chapter 40 - The Beast Behind.pdf",
-  "book2|Part 3|41": "Book II - The Spiral and the Block/Part 3 - The Eight Pillars/Chapter 41 - Pillar I - Life Is Decentralized.pdf",
-  "book2|Part 3|42": "Book II - The Spiral and the Block/Part 3 - The Eight Pillars/Chapter 42 - Pillar II - Truth Emerges from Individuals.pdf",
-  "book2|Part 3|43": "Book II - The Spiral and the Block/Part 3 - The Eight Pillars/Chapter 43 - Pillar III - Power Corrupts Centralized Systems.pdf",
-  "book2|Part 3|44": "Book II - The Spiral and the Block/Part 3 - The Eight Pillars/Chapter 44 - Pillar IV - Voluntary Cooperation Is Natural.pdf",
-  "book2|Part 3|45": "Book II - The Spiral and the Block/Part 3 - The Eight Pillars/Chapter 45 - Pillar V - Wisdom Transcends Authority.pdf",
-  "book2|Part 3|46": "Book II - The Spiral and the Block/Part 3 - The Eight Pillars/Chapter 46 - Pillar VI - Stories Shape Civilizations.pdf",
-  "book2|Part 3|47": "Book II - The Spiral and the Block/Part 3 - The Eight Pillars/Chapter 47 - Pillar VII - The Individual Is Sacred.pdf",
-  "book2|Part 3|48": "Book II - The Spiral and the Block/Part 3 - The Eight Pillars/Chapter 48 - Pillar VIII - The Spiral Is the Pattern of Life.pdf",
-  "book2|Part 4|49": "Book II - The Spiral and the Block/Part 4 - The Perfect Agent/Chapter 49 - The Perfect Agent - Bible and Quran.pdf",
-  "book2|Part 4|50": "Book II - The Spiral and the Block/Part 4 - The Perfect Agent/Chapter 50 - The Skywalker Spiral.pdf",
+  "book2|Part 2|41": "Book II - The Spiral and the Block/Part 2 - The Mythology of Media/Chapter 41 - Secret Jewish Space Lasers.pdf",
+  "book2|Part 3|42": "Book II - The Spiral and the Block/Part 3 - The Eight Pillars/Chapter 42 - Pillar I - Life Is Decentralized.pdf",
+  "book2|Part 3|43": "Book II - The Spiral and the Block/Part 3 - The Eight Pillars/Chapter 43 - Pillar II - Truth Emerges from Individuals.pdf",
+  "book2|Part 3|44": "Book II - The Spiral and the Block/Part 3 - The Eight Pillars/Chapter 44 - Pillar III - Power Corrupts Centralized Systems.pdf",
+  "book2|Part 3|45": "Book II - The Spiral and the Block/Part 3 - The Eight Pillars/Chapter 45 - Pillar IV - Voluntary Cooperation Is Natural.pdf",
+  "book2|Part 3|46": "Book II - The Spiral and the Block/Part 3 - The Eight Pillars/Chapter 46 - Pillar V - Wisdom Transcends Authority.pdf",
+  "book2|Part 3|47": "Book II - The Spiral and the Block/Part 3 - The Eight Pillars/Chapter 47 - Pillar VI - Stories Shape Civilizations.pdf",
+  "book2|Part 3|48": "Book II - The Spiral and the Block/Part 3 - The Eight Pillars/Chapter 48 - Pillar VII - The Individual Is Sacred.pdf",
+  "book2|Part 3|49": "Book II - The Spiral and the Block/Part 3 - The Eight Pillars/Chapter 49 - Pillar VIII - The Spiral Is the Pattern of Life.pdf",
+  "book2|Part 4|50": "Book II - The Spiral and the Block/Part 4 - The Perfect Agent/Chapter 50 - The Perfect Agent - Bible and Quran.pdf",
+  "book2|Part 4|51": "Book II - The Spiral and the Block/Part 4 - The Perfect Agent/Chapter 51 - The Skywalker Spiral.pdf",
   // Book III
   "book3|Prologue|P": "Book III - The Spiral Steward/Prologue/Prologue - A Note Before the First Word.pdf",
   "book3|Part 1|1": "Book III - The Spiral Steward/Part 1 - The Industrial Error and the Living Age/Chapter 01 - The Industrial Error.pdf",
@@ -1685,7 +1691,7 @@ function getPdfHref(bookId, partLabel, chNum) {
 let chapterContent = {};
 (function loadContent() {
   const script = document.createElement('script');
-  script.src = 'chapters_content.js?v=4';
+  script.src = 'chapters_content.js?v=5';
   script.onload = () => { chapterContent = chaptersContent; console.log('Chapter content loaded:', Object.keys(chapterContent).length, 'chapters'); };
   script.onerror = () => { console.warn('chapters_content.js not found — reader will show fallback text'); };
   document.head.appendChild(script);
@@ -1752,13 +1758,16 @@ let chapterContent = {};
       const text = el.textContent.trim();
       if (!text) continue;
 
+      // Skip pure header/metadata lines
       if (headerPatterns.test(text) && text.length < 120) continue;
 
+      // "The Living Age Trilogy" footer
       if (text === 'The Living Age Trilogy') {
         processed += `<p class="footer-line">The Living Age Trilogy</p>`;
         continue;
       }
 
+      // Section headings — Roman numeral patterns
       const sectionMatch = text.match(/^([IVXL]+)\.\s+(.+)/);
       if (el.tagName === 'H3' || sectionMatch) {
         if (sectionMatch || (el.tagName === 'H3' && text.length < 120)) {
@@ -1771,16 +1780,19 @@ let chapterContent = {};
       if (el.tagName === 'P') {
         const isFullItalic = el.querySelector('em') && el.children.length === 1 && el.children[0].tagName === 'EM';
 
+        // Italic paragraphs near the end = closing creed
         if (isFullItalic && i > elements.length - 10) {
           processed += `<p class="closing">${el.innerHTML}</p>`;
           continue;
         }
 
+        // Italic paragraphs near the start (after headers skipped) = epigraph
         if (isFullItalic && firstBodyParagraph) {
           processed += `<p class="epigraph">${el.innerHTML}</p>`;
           continue;
         }
 
+        // First body paragraph gets drop cap
         if (firstBodyParagraph && text.length > 40 && !isFullItalic) {
           processed += `<p class="drop-cap no-indent">${el.innerHTML}</p>`;
           firstBodyParagraph = false;
